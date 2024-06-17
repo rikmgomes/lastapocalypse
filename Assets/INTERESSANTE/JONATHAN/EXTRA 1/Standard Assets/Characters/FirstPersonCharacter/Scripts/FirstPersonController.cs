@@ -55,6 +55,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+            Cursor.lockState = CursorLockMode.Confined;
         }
 
 
@@ -236,6 +237,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void RotateView()
         {
+            if(Time.deltaTime == 0){
+                return;
+            }
             m_MouseLook.LookRotation (transform, m_Camera.transform);
         }
 
