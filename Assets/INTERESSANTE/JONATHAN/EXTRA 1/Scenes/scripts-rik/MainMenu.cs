@@ -23,6 +23,16 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
+        SceneManager.LoadScene("tutorial");
+    }
+
+    public void PlayGameDois()
+    {
+        SceneManager.LoadScene("loreoficial");
+    }
+
+    public void PlayGameTres()
+    {
         SceneManager.LoadScene("TowerIron");
     }
 
