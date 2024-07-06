@@ -8,6 +8,9 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject painelMenuInicial;
     [SerializeField] private GameObject painelOpcoes;
+    [SerializeField] private GameObject canvasTutorial;
+    [SerializeField] private GameObject canvasLore;
+    [SerializeField] private GameObject canvasMenuInicial;
     [SerializeField] Slider volumeSlider;
     public AudioSource audioClip;
 
@@ -21,17 +24,19 @@ public class MainMenu : MonoBehaviour
         audioClip.Play();
     }
 
-    public void PlayGame()
+    public void AbrirTutoras()
     {
-        SceneManager.LoadScene("tutorial");
+        canvasMenuInicial.SetActive(false);
+        canvasTutorial.SetActive(true);
     }
 
-    public void PlayGameDois()
+    public void AbrirLore()
     {
-        SceneManager.LoadScene("loreoficial");
+        canvasTutorial.SetActive(false);
+        canvasLore.SetActive(true);
     }
 
-    public void PlayGameTres()
+    public void AbrirTowerIron()
     {
         SceneManager.LoadScene("TowerIron");
     }

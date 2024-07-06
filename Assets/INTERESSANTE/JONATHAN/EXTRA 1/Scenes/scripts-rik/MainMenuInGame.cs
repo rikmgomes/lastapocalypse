@@ -9,11 +9,16 @@ public class MainMenuInGame : MonoBehaviour
     [SerializeField] GameObject panel;
     PauseManager pauseManager;
     [SerializeField] Slider volumeSlider;
+    public GameObject point;
 
     private void Awake()
     {
         pauseManager = GetComponent<PauseManager>();
         volumeSlider.value = AudioListener.volume;
+        PlayerPrefs.SetFloat("RespawnPointX", point.transform.position.x);
+        PlayerPrefs.SetFloat("RespawnPointY", point.transform.position.y);
+        PlayerPrefs.SetFloat("RespawnPointZ", point.transform.position.z);
+        PlayerPrefs.Save();
     }
 
     void Update()
